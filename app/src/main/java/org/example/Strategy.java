@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface Strategy {
 
-  Needle run(List<Integer> requests);
+  Needle run();
 
-  String getStrategyType();
+  String getAlgorithmName();
 }
