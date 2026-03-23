@@ -18,7 +18,7 @@ public class Context {
     this.currentStrategy = newStrat;
   }
 
-  public void executeStrategy() {
-    this.currentStrategy.run();
+  public Needle executeStrategy() {
+    return this.currentStrategy.run();
   }
 }
