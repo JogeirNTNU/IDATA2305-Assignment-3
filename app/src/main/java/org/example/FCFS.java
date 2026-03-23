@@ -1,4 +1,4 @@
 package org.example;
 
-public class FCFS {
+public class FCFS implements Strategy {
 }
