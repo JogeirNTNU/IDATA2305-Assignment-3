@@ -13,7 +13,7 @@ public class Needle {
   private boolean clockwisePath;
   private int currentPosition;
 
-  public Needle(String algoType, int startPos) {
+  public Needle(String algoType, int startPos, boolean clockwisePath) {
     this.algoType = algoType;
     this.startPos = startPos;
     this.currentPosition = startPos;
