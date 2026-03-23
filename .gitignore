@@ -9,3 +9,6 @@ build
 
 # Visual studio code
 .vscode
+
+# Ignore binary/output folders
+bin/
