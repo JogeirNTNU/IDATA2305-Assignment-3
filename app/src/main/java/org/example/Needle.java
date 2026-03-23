@@ -5,7 +5,6 @@ import java.util.List;
 
 public class Needle {
 
-  private String algoType;
   private List<Integer> needlePath = new ArrayList<>();
   private int totalHeadMovement = 0;
   private int startPos;
@@ -13,8 +12,7 @@ public class Needle {
   private boolean clockwisePath;
   private int currentPosition;
 
-  public Needle(String algoType, int startPos, boolean clockwisePath) {
-    this.algoType = algoType;
+  public Needle(int startPos, boolean clockwisePath) {
     this.startPos = startPos;
     this.currentPosition = startPos;
   }
@@ -49,10 +47,6 @@ public class Needle {
 
   public void setCurrentPosition(int currentPosition) {
     this.currentPosition = currentPosition;
-  }
-
-  public String getAlgoType() {
-    return this.algoType;
   }
 
   public List<Integer> getNeedlePath() {

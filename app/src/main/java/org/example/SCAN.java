@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * SCAN disc scheduling algorithm.
  */
-public class SCAN {
+public class SCAN implements Strategy {
   private List<Integer> requests = new ArrayList<>();
 
   /**
