@@ -15,6 +15,7 @@ public class Needle {
   public Needle(int startPos, boolean clockwisePath) {
     this.startPos = startPos;
     this.currentPosition = startPos;
+    this.clockwisePath = clockwisePath;
   }
 
   public List<Integer> getRequests() {
@@ -53,7 +54,15 @@ public class Needle {
     return this.needlePath;
   }
 
+  public void addPathToNeedlePath(int path) {
+    this.needlePath.add(path);
+  }
+
   public int getTotalHeadMovement() {
     return this.totalHeadMovement;
+  }
+
+  public void addTotalHeadMovement(int movement) {
+    this.totalHeadMovement += movement;
   }
 }
