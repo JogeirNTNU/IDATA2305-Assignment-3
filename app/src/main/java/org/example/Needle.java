@@ -22,7 +22,7 @@ public class Needle {
     return this.requests;
   }
 
-  public void setRequests(ArrayList<Integer> requests) {
+  public void setRequests(List<Integer> requests) {
     this.requests = requests;
   }
 
