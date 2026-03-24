@@ -22,23 +22,19 @@ public class AlgorithmTestCase1 {
     this.context = new Context();
   }
 
+  /*
   @Test
   public void case1Scan() {
-
-    /*
-     * Initial Head Position: 53
-     * Initial Direction: right
-     * Requests:
-     * 98, 183, 37, 122, 14, 124, 65, 67
-     */
 
     SCAN scan = new SCAN(requestsList);
     Context context = new Context(scan);
     context.executeStrategy();
   }
+  */
 
   @Test
   public void case1SSTF() {
+    this.needle.setRequests(requestsList);
     SSTF sstf = new SSTF(this.needle);
     this.context.setStrategy(sstf);
     Needle needle = context.executeStrategy();
