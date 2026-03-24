@@ -33,6 +33,7 @@ public class SSTF implements Strategy {
         finished = true;
       }
     }
+    new printResults(this.needle, this.algoName);
     return this.needle;
   }
 
@@ -57,5 +58,4 @@ public class SSTF implements Strategy {
     requests.removeIf(r -> r == request);
     this.needle.setRequests(requests);
   }
-
 }
