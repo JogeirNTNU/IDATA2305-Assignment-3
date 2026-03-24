@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SSTF implements Strategy {
@@ -52,12 +53,8 @@ public class SSTF implements Strategy {
 
   private void removeRequestFromRequests(int request) {
     
-    List<Integer> requests = this.needle.getRequests();
-    for (int i = 0; i < requests.size(); i++) {
-      if (requests.get(i) == request) {
-        requests.remove(request);
-      }
-    }
+    List<Integer> requests = new ArrayList<>(this.needle.getRequests());
+    requests.removeIf(r -> r == request);
     this.needle.setRequests(requests);
   }
 
