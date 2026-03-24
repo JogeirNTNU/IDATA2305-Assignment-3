@@ -38,7 +38,7 @@ public class AlgorithmTestCase1 {
     SSTF sstf = new SSTF(this.needle);
     this.context.setStrategy(sstf);
     Needle needle = context.executeStrategy();
-    List<Integer> serviceOrder = Arrays.asList(53, 65, 67, 37, 14, 98, 122, 124, 183, 199);
+    List<Integer> serviceOrder = Arrays.asList(53, 65, 67, 37, 14, 98, 122, 124, 183);
 
     assertEquals("Shortest seek time first", sstf.getAlgorithmName());
     assertEquals(serviceOrder, needle.getNeedlePath());
