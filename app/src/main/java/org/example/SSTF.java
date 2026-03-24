@@ -1,7 +1,5 @@
 package org.example;
 
-import java.util.List;
-
 public class SSTF implements Strategy {
 
   private final String algoName = "Shortest seek time first";
@@ -16,49 +14,8 @@ public class SSTF implements Strategy {
   }
 
   public Needle run() {
-    boolean finished = false;
-    this.needle.addPathToNeedlePath(this.needle.getCurrentPosition());
-    while (!finished) {
-      int request = findLeastDeltaNumber();
 
-      this.needle.addTotalHeadMovement(
-        Math.abs(request-this.needle.getCurrentPosition())
-      );
-      this.needle.addPathToNeedlePath(request);
-
-      this.needle.setCurrentPosition(request);
-
-      if (this.needle.getRequests().isEmpty()) {
-        finished = true;
-      }
-    }
-    return this.needle;
-  }
-
-  private int findLeastDeltaNumber() {
-    int shortestRequest = this.needle.getRequests().getFirst();
-
-    for (int i : this.needle.getRequests()) {
-      if (
-        Math.abs(this.needle.getCurrentPosition() - i) <
-        Math.abs(this.needle.getCurrentPosition() - shortestRequest)
-        ) {
-        shortestRequest = i;
-      }
-    }
-    removeRequestFromRequests(shortestRequest);
-    return shortestRequest;
-  }
-
-  private void removeRequestFromRequests(int request) {
-    
-    List<Integer> requests = this.needle.getRequests();
-    for (int i = 0; i < requests.size(); i++) {
-      if (requests.get(i) == request) {
-        requests.remove(request);
-      }
-    }
-    this.needle.setRequests(requests);
+    return this.neeedle;
   }
 
 }
