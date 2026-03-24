@@ -20,4 +20,14 @@ public class SCAN implements Strategy {
     return this.requests;
   }
 
+  @Override
+  public Needle run() {
+    return new Needle(1,true); //:
+  }
+
+  @Override
+  public String getAlgorithmName() {
+    return "skibbidi toilet";
+  }
+
 }
