@@ -8,7 +8,7 @@ public class Needle {
   private List<Integer> needlePath = new ArrayList<>();
   private int totalHeadMovement = 0;
   private int startPos;
-  private List<Integer> requests;
+  private List<Integer> requests = new ArrayList<>();
   private boolean clockwisePath;
   private int currentPosition;
 
@@ -22,16 +22,16 @@ public class Needle {
     return this.requests;
   }
 
+  public void setRequests(ArrayList<Integer> requests) {
+    this.requests = requests;
+  }
+
   public void setClockwisePath(boolean clockwisePath) {
     this.clockwisePath = clockwisePath;
   }
 
   public boolean isClockwisePath() {
     return this.clockwisePath;
-  }
-
-  public void setRequests(List<Integer> requests) {
-    this.requests = requests;
   }
 
   public int getStartPos() {
