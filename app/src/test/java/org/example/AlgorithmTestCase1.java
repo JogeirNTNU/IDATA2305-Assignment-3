@@ -22,15 +22,21 @@ public class AlgorithmTestCase1 {
     this.context = new Context();
   }
 
-  /*
+
   @Test
   public void case1Scan() {
 
-    SCAN scan = new SCAN(requestsList);
-    Context context = new Context(scan);
-    context.executeStrategy();
+    this.needle.setRequests(requestsList);
+    SCAN scan = new SCAN(this.needle);
+    this.context.setStrategy(scan);
+    Needle needle = context.executeStrategy();
+    List<Integer> serviceOrder = Arrays.asList(53, 37, 14, 0, 65, 67, 98, 122, 124, 183);
+
+    assertEquals("SCAN", scan.getAlgorithmName());
+    assertEquals(serviceOrder, needle.getNeedlePath());
+    assertEquals(236, needle.getTotalHeadMovement());
   }
-  */
+
 
   @Test
   public void case1SSTF() {

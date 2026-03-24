@@ -33,4 +33,18 @@ public class AlgorithmTestCase2 {
     assertEquals(serviceOrder, needle.getNeedlePath());
     assertEquals(120, needle.getTotalHeadMovement());
   }
+
+  @Test
+  public void case2SCAN() {
+    this.needle.setRequests(requestsList);
+    SCAN scan = new SCAN(this.needle);
+    this.context.setStrategy(scan);
+    Needle needle = context.executeStrategy();
+    List<Integer> serviceOrder = Arrays.asList(50, 48, 45, 0, 52, 90, 150, 160);
+
+    assertEquals("SCAN", scan.getAlgorithmName());
+    assertEquals(serviceOrder, needle.getNeedlePath());
+    assertEquals(210, needle.getTotalHeadMovement());
+  }
+
 }
