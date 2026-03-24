@@ -33,7 +33,7 @@ public class SSTF implements Strategy {
         finished = true;
       }
     }
-    new printResults(this.needle, this.algoName);
+    new PrintResults(this.needle, this.algoName);
     return this.needle;
   }
 
