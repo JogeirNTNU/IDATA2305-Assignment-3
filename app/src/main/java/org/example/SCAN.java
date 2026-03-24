@@ -52,13 +52,18 @@ public class SCAN implements Strategy {
         for (int i : clockWise) {
 
           needle.addPathToNeedlePath(i);
-          needle.addTotalHeadMovement(Math.abs(needle.getStartPos()) - needle.getCurrentPosition());
+          needle.addTotalHeadMovement(Math.abs(i - needle.getCurrentPosition()));
+          needle.setCurrentPosition(i);
         }
+        needle.addPathToNeedlePath(0);
+        needle.addTotalHeadMovement(needle.getCurrentPosition());
+        needle.setCurrentPosition(0);
 
         for (int i : antiClockWise) {
 
           needle.addPathToNeedlePath(i);
-          needle.addTotalHeadMovement(Math.abs(antiClockWise.get(i) - needle.getCurrentPosition()));
+          needle.addTotalHeadMovement(Math.abs(i - needle.getCurrentPosition()));
+          needle.setCurrentPosition(i);
 
 
         }
@@ -69,20 +74,22 @@ public class SCAN implements Strategy {
 
           needle.addPathToNeedlePath(i);
           needle.addTotalHeadMovement(Math.abs(antiClockWise.get(i) - needle.getCurrentPosition()));
+          needle.setCurrentPosition(i);
 
 
         }
         for (int i : clockWise) {
 
           needle.addPathToNeedlePath(i);
-          needle.addTotalHeadMovement(Math.abs(needle.getStartPos()) - needle.getCurrentPosition());
+          needle.addTotalHeadMovement(Math.abs(needle.getStartPos() - needle.getCurrentPosition()));
+          needle.setCurrentPosition(i);
         }
         isFinished = true;
       }
 
     }
 
-
+    new PrintResults(needle, getAlgorithmName());
     return needle;
   }
 
