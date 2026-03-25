@@ -24,6 +24,19 @@ public class AlgorithmTestCase1 {
 
 
   @Test
+  public void case1FCFS() {
+    this.needle.setRequests(requestsList);
+    FCFS fcfs = new FCFS(this.needle);
+    this.context.setStrategy(fcfs);
+    Needle needle = context.executeStrategy();
+    List<Integer> serviceOrder = Arrays.asList(53, 98, 183, 37, 122, 14, 124, 65, 67);
+
+    assertEquals("First Come First Serve", fcfs.getAlgorithmName());
+    assertEquals(serviceOrder, needle.getNeedlePath());
+    assertEquals(640, needle.getTotalHeadMovement());
+  }
+
+  @Test
   public void case1Scan() {
 
     this.needle.setRequests(requestsList);
