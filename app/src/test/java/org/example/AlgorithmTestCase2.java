@@ -22,6 +22,19 @@ public class AlgorithmTestCase2 {
   }
 
   @Test
+  public void case2FCFS() {
+    this.needle.setRequests(requestsList);
+    FCFS fcfs = new FCFS(this.needle);
+    this.context.setStrategy(fcfs);
+    Needle needle = context.executeStrategy();
+    List<Integer> serviceOrder = Arrays.asList(50, 45, 48, 52, 90, 150, 160);
+
+    assertEquals("First Come First Serve", fcfs.getAlgorithmName());
+    assertEquals(serviceOrder, needle.getNeedlePath());
+    assertEquals(120, needle.getTotalHeadMovement());
+  }
+
+  @Test
   public void case2SSTF() {
     this.needle.setRequests(requestsList);
     SSTF sstf = new SSTF(this.needle);
