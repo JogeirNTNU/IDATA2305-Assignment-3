@@ -3,6 +3,10 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Holds all data needed for the algorithms to work properly. Object of this
+ * class is returned when algorithm is done.
+ */
 public class Needle {
 
   private List<Integer> needlePath = new ArrayList<>();

@@ -19,17 +19,17 @@ public class SCAN implements Strategy {
 
   }
 
-
-
-
-
+  /**
+   * Responsible for running the simulation, for this algorithm.
+   *
+   * @returns The needle that holds all values which is used to test the
+   *          algorithm.
+   */
   @Override
   public Needle run() {
 
     List<Integer> clockWise = new ArrayList<>();
     List<Integer> antiClockWise = new ArrayList<>();
-
-
 
     for (int i : needle.getRequests()) {
       if (i < needle.getStartPos()) {
@@ -41,8 +41,6 @@ public class SCAN implements Strategy {
 
     clockWise.sort(Comparator.reverseOrder());
     antiClockWise.sort(Comparator.naturalOrder());
-
-
 
     needle.addPathToNeedlePath(needle.getStartPos());
     boolean isFinished = false;
@@ -65,7 +63,6 @@ public class SCAN implements Strategy {
           needle.addTotalHeadMovement(Math.abs(i - needle.getCurrentPosition()));
           needle.setCurrentPosition(i);
 
-
         }
         isFinished = true;
 
@@ -75,7 +72,6 @@ public class SCAN implements Strategy {
           needle.addPathToNeedlePath(i);
           needle.addTotalHeadMovement(Math.abs(antiClockWise.get(i) - needle.getCurrentPosition()));
           needle.setCurrentPosition(i);
-
 
         }
         for (int i : clockWise) {
