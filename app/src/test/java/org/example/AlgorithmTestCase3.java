@@ -8,12 +8,18 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * Algorithm case 3 test class.
+ */
 public class AlgorithmTestCase3 {
 
   private Needle needle;
   private List<Integer> requestsList;
   private Context context;
 
+  /**
+   * Set up before each test.
+   */
   @Before
   public void case3Init() {
     this.needle = new Needle(15, true);

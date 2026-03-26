@@ -3,6 +3,10 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class responsible to simulating a SSTF algorithm, without runtime addition of
+ * new requests.
+ */
 public class SSTF implements Strategy {
 
   private final String algoName = "Shortest seek time first";
@@ -16,6 +20,12 @@ public class SSTF implements Strategy {
     return this.algoName;
   }
 
+  /**
+   * Responsible for running the simulation, for this algorithm.
+   *
+   * @returns The needle that holds all values which is used to test the
+   *          algorithm.
+   */
   public Needle run() {
     boolean finished = false;
     this.needle.addPathToNeedlePath(this.needle.getCurrentPosition());
@@ -23,8 +33,7 @@ public class SSTF implements Strategy {
       int request = findLeastDeltaNumber();
 
       this.needle.addTotalHeadMovement(
-        Math.abs(request-this.needle.getCurrentPosition())
-      );
+          Math.abs(request - this.needle.getCurrentPosition()));
       this.needle.addPathToNeedlePath(request);
 
       this.needle.setCurrentPosition(request);
@@ -41,10 +50,8 @@ public class SSTF implements Strategy {
     int shortestRequest = this.needle.getRequests().getFirst();
 
     for (int i : this.needle.getRequests()) {
-      if (
-        Math.abs(this.needle.getCurrentPosition() - i) <
-        Math.abs(this.needle.getCurrentPosition() - shortestRequest)
-        ) {
+      if (Math.abs(this.needle.getCurrentPosition() - i) < Math
+          .abs(this.needle.getCurrentPosition() - shortestRequest)) {
         shortestRequest = i;
       }
     }
@@ -53,7 +60,7 @@ public class SSTF implements Strategy {
   }
 
   private void removeRequestFromRequests(int request) {
-    
+
     List<Integer> requests = new ArrayList<>(this.needle.getRequests());
     requests.removeIf(r -> r == request);
     this.needle.setRequests(requests);

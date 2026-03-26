@@ -9,7 +9,8 @@ public class Context {
   }
 
   /**
-   * Set strategy later.
+   * Context class, used to switch between algorithms (Strategies), and execute
+   * them easily.
    */
   public Context() {
   }

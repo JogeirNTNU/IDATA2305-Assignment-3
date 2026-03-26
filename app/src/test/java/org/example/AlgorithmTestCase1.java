@@ -9,19 +9,24 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * Case 1 algorithms tests.
+ */
 public class AlgorithmTestCase1 {
 
   private Needle needle;
   private List<Integer> requestsList;
   private Context context;
 
+  /**
+   * Set up before the tests are run.
+   */
   @Before
   public void case1Init() {
     this.needle = new Needle(53, true);
     this.requestsList = Arrays.asList(98, 183, 37, 122, 14, 124, 65, 67);
     this.context = new Context();
   }
-
 
   @Test
   public void case1FCFS() {
@@ -49,7 +54,6 @@ public class AlgorithmTestCase1 {
     assertEquals(serviceOrder, needle.getNeedlePath());
     assertEquals(236, needle.getTotalHeadMovement());
   }
-
 
   @Test
   public void case1SSTF() {
